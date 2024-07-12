@@ -4,11 +4,9 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
-import { useAuth } from "../../context/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [auth, setAuth] = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,11 +21,7 @@ const Login = () => {
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
-        setAuth({
-          ...auth,
-          user: res.data.user,
-          token: res.data.token,
-        });
+
         localStorage.setItem("auth", JSON.stringify(res.data));
         navigate(location.state || "/");
       } else {
@@ -40,14 +34,13 @@ const Login = () => {
   };
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container " style={{ minHeight: "90vh" }}>
+      <div className="form-container ">
         <form onSubmit={handleSubmit}>
           <h4 className="title">LOGIN FORM</h4>
 
           <div className="mb-3">
             <input
               type="email"
-              autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
@@ -70,7 +63,7 @@ const Login = () => {
           <div className="mb-3">
             <button
               type="button"
-              className="btn forgot-btn"
+              className="btn btn-primary"
               onClick={() => {
                 navigate("/forgot-password");
               }}
