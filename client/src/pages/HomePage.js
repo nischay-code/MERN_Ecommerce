@@ -140,6 +140,7 @@ const HomePage = () => {
                   src={`/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
+                  height={"320px"}
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
@@ -154,7 +155,7 @@ const HomePage = () => {
                     More Details
                   </button>
                   <button
-                    className="btn btn-secondary ms-1"
+                    className="btn btn-secondary ms-1 m-1"
                     onClick={() => {
                       setCart([...cart, p]);
                       localStorage.setItem(

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
+
+
 .form-container {
   display: flex;
   align-items: center;
@@ -18,7 +21,7 @@
   text-align: center;
   margin-bottom: 15px;
   font-weight: bold;
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .form-container form input {

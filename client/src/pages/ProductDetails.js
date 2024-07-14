@@ -8,11 +8,10 @@ const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
 
-  //initalp details
   useEffect(() => {
     if (params?.slug) getProduct();
   }, [params?.slug]);
-  //getProduct
+ 
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
@@ -24,7 +23,7 @@ const ProductDetails = () => {
       console.log(error);
     }
   };
-  //get similar product
+ 
   const getSimilarProduct = async (pid, cid) => {
     try {
       const { data } = await axios.get(
