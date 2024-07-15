@@ -3,31 +3,31 @@
 This is a MERN stack eCommerce site built using the following technologies:
 
 ## 🌟 Frontend Dependencies
-- 🧩 antd: ^5.1.7
-- 🌐 axios: ^1.2.5
-- ⚛️ react: ^18.2.0
-- 🖼️ react-dom: ^18.2.0
-- 🪖 react-helmet: ^6.1.0
-- 🔥 react-hot-toast: ^2.4.0
-- 🔗 react-router-dom: ^6.7.0
-- 🛠️ react-scripts: 5.0.1
-- 🍞 react-toastify: ^9.1.1
-- 📈 web-vitals: ^2.1.4
+- 🧩 antd
+- 🌐 axios
+- ⚛️ react: 
+- 🖼️ react-dom
+- 🪖 react-helmet
+- 🔥 react-hot-toast
+- 🔗 react-router-dom
+- 🛠️ react-scripts
+- 🍞 react-toastify
+- 📈 web-vitals
 
 ## 🔧 Backend Dependencies
-- 🔒 bcrypt: ^5.1.0
-- 🎨 colors: ^1.4.0
-- 🕒 concurrently: ^7.6.0
-- 🌍 cors: ^2.8.5
-- 🗂️ dotenv: ^16.0.3
-- 🚂 express: ^4.18.2
-- 📑 express-formidable: ^1.2.0
-- 🔐 jsonwebtoken: ^9.0.0
-- 🗄️ mongoose: ^6.8.4
-- 📜 morgan: ^1.10.0
-- 🔄 nodemon: ^2.0.20
-- 🎨 react-icons: ^4.7.1
-- 📝 slugify: ^1.6.5
+- 🔒 bcrypt
+- 🎨 colors
+- 🕒 concurrently
+- 🌍 cors
+- 🗂️ dotenv
+- 🚂 express
+- 📑 express-formidable
+- 🔐 jsonwebtoken
+- 🗄️ mongoose
+- 📜 morgan
+- 🔄 nodemon
+- 🎨 react-icons
+- 📝 slugify
 
 ## 🛠️ Environment Variables
 
@@ -81,9 +81,10 @@ npm start
 ### In the root package.json file, add the following script to run both the frontend and backend servers concurrently:
 ```
 "scripts": {
-  "server": "cd backend && npm start",
-  "client": "cd frontend && npm start",
-  "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
 }
 ```
 ## Running the Application
